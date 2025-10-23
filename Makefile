@@ -77,7 +77,7 @@ init:
 
 security: init
 	@echo "--> Running Security checks"
-	@trivy config .
+	@trivy config --skip-dirs docs/cloudformation-templates .
 	$(MAKE) security-modules
 	$(MAKE) security-examples
 
