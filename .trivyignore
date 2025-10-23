@@ -1,0 +1,8 @@
+# Ignore CloudFormation templates downloaded for reference
+# These are official AWS templates and not under our control
+docs/cloudformation-templates/
+
+# Ignore any downloaded CloudFormation templates
+*.template
+*-template.yaml
+*-template.yml
