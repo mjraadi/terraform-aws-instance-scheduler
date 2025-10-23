@@ -26,22 +26,22 @@ output "hub_stack_region" {
 
 output "scheduler_role_arn" {
   description = "ARN of the Instance Scheduler IAM role"
-  value       = local.hub_stack_outputs.scheduler_role_arn
+  value       = var.deploy_hub_stack ? local.hub_stack_outputs.scheduler_role_arn : null
 }
 
 output "dynamodb_table_name" {
   description = "Name of the DynamoDB configuration table"
-  value       = local.hub_stack_outputs.dynamodb_table_name
+  value       = var.deploy_hub_stack ? local.hub_stack_outputs.dynamodb_table_name : null
 }
 
 output "lambda_function_arn" {
   description = "ARN of the Instance Scheduler Lambda function"
-  value       = local.hub_stack_outputs.lambda_function_arn
+  value       = var.deploy_hub_stack ? local.hub_stack_outputs.lambda_function_arn : null
 }
 
 output "sns_topic_arn" {
   description = "ARN of the Instance Scheduler SNS topic"
-  value       = local.hub_stack_outputs.sns_topic_arn
+  value       = var.deploy_hub_stack ? local.hub_stack_outputs.sns_topic_arn : null
 }
 
 # =============================================================================
@@ -65,7 +65,7 @@ output "remote_stack_region" {
 
 output "cross_account_role_arn" {
   description = "ARN of the cross-account IAM role for remote stack access"
-  value       = local.remote_stack_outputs.cross_account_role_arn
+  value       = var.deploy_remote_stack ? local.remote_stack_outputs.cross_account_role_arn : null
 }
 
 # =============================================================================
