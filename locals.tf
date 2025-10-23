@@ -56,25 +56,25 @@ locals {
   # =============================================================================
 
   hub_parameters = {
-    ScheduleTagKey              = var.schedule_tag_key
-    SchedulingInterval          = var.scheduling_interval_minutes
-    DefaultTimezone             = var.default_timezone
-    SchedulingEnabled           = var.scheduling_enabled ? "Yes" : "No"
-    EnableEC2Scheduling         = var.enable_ec2_scheduling ? "Yes" : "No"
-    EnableRdsScheduling         = var.enable_rds_scheduling ? "Yes" : "No"
-    EnableAsgScheduling         = var.enable_asg_scheduling ? "Yes" : "No"
-    UseCloudWatchMetrics        = var.enable_operational_monitoring ? "Yes" : "No"
-    LogRetentionDays            = var.log_retention_days
-    MemorySize                  = var.memory_size
-    EnableDebugLogging          = var.enable_debug_logging ? "Yes" : "No"
-    UseAWSOrganizations         = var.use_aws_organizations ? "Yes" : "No"
-    Namespace                   = var.namespace
-    EnabledHubAccountScheduling = var.enable_hub_account_scheduling ? "Yes" : "No"
+    TagName               = var.schedule_tag_key
+    SchedulerFrequency    = var.scheduling_interval_minutes
+    DefaultTimezone       = var.default_timezone
+    SchedulingActive      = var.scheduling_enabled ? "Yes" : "No"
+    ScheduleEC2           = var.enable_ec2_scheduling ? "Enabled" : "Disabled"
+    ScheduleRds           = var.enable_rds_scheduling ? "Enabled" : "Disabled"
+    ScheduleASGs          = var.enable_asg_scheduling ? "Enabled" : "Disabled"
+    OpsMonitoring         = var.enable_operational_monitoring ? "Enabled" : "Disabled"
+    LogRetentionDays      = var.log_retention_days
+    MemorySize            = var.memory_size
+    Trace                 = var.enable_debug_logging ? "Yes" : "No"
+    UsingAWSOrganizations = var.use_aws_organizations ? "Yes" : "No"
+    Namespace             = var.namespace
+    ScheduleLambdaAccount = var.enable_hub_account_scheduling ? "Yes" : "No"
 
     # Conditional parameters based on configuration
-    OrganizationId = var.use_aws_organizations ? var.organization_id : join(",", var.remote_account_ids)
-    Regions        = length(var.regions) > 0 ? join(",", var.regions) : local.current_region
-    KmsKeyArnsEc2  = var.kms_key_arns_ec2
+    Principals = var.use_aws_organizations ? var.organization_id : join(",", var.remote_account_ids)
+    Regions    = length(var.regions) > 0 ? join(",", var.regions) : ""
+    KmsKeyArns = var.kms_key_arns_ec2
   }
 
   # Filter out empty/null parameters for hub stack
@@ -87,10 +87,10 @@ locals {
   # =============================================================================
 
   remote_parameters = {
-    HubAccountId        = var.hub_account_id
-    UseAWSOrganizations = var.use_aws_organizations ? "Yes" : "No"
-    Namespace           = var.namespace
-    KmsKeyArnsEc2       = var.kms_key_arns_ec2
+    InstanceSchedulerAccount = var.hub_account_id
+    UsingAWSOrganizations    = var.use_aws_organizations ? "Yes" : "No"
+    Namespace                = var.namespace
+    KmsKeyArns               = var.kms_key_arns_ec2
   }
 
   # Filter out empty/null parameters for remote stack

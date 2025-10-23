@@ -22,9 +22,9 @@ output "dynamodb_table_name" {
   value       = module.instance_scheduler_hub.dynamodb_table_name
 }
 
-output "lambda_function_arn" {
-  description = "ARN of the Instance Scheduler Lambda function"
-  value       = module.instance_scheduler_hub.lambda_function_arn
+output "service_token" {
+  description = "Service token for the Instance Scheduler"
+  value       = module.instance_scheduler_hub.service_token
 }
 
 output "schedule_tag_key" {

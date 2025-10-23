@@ -34,9 +34,9 @@ output "dynamodb_table_name" {
   value       = var.deploy_hub_stack ? local.hub_stack_outputs.dynamodb_table_name : null
 }
 
-output "lambda_function_arn" {
-  description = "ARN of the Instance Scheduler Lambda function"
-  value       = var.deploy_hub_stack ? local.hub_stack_outputs.lambda_function_arn : null
+output "service_token" {
+  description = "Service token for the Instance Scheduler"
+  value       = var.deploy_hub_stack ? local.hub_stack_outputs.service_token : null
 }
 
 output "sns_topic_arn" {
@@ -61,11 +61,6 @@ output "remote_stack_name" {
 output "remote_stack_region" {
   description = "AWS region where the remote stack is deployed"
   value       = var.deploy_remote_stack ? aws_cloudformation_stack.remote_stack[0].region : null
-}
-
-output "cross_account_role_arn" {
-  description = "ARN of the cross-account IAM role for remote stack access"
-  value       = var.deploy_remote_stack ? local.remote_stack_outputs.cross_account_role_arn : null
 }
 
 # =============================================================================

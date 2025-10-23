@@ -36,21 +36,3 @@ resource "aws_cloudformation_stack" "remote_stack" {
     null_resource.validation
   ]
 }
-
-# =============================================================================
-# Remote Stack Outputs
-# =============================================================================
-
-# Extract important outputs from the remote stack
-locals {
-  remote_stack_outputs = var.deploy_remote_stack ? {
-    cross_account_role_arn = try(
-      aws_cloudformation_stack.remote_stack[0].outputs["CrossAccountRole"],
-      null
-    )
-    stack_id = try(
-      aws_cloudformation_stack.remote_stack[0].id,
-      null
-    )
-  } : {}
-}
