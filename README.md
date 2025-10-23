@@ -218,7 +218,6 @@ For issues and questions:
 
 | Name | Description |
 |------|-------------|
-| <a name="output_cross_account_role_arn"></a> [cross\_account\_role\_arn](#output\_cross\_account\_role\_arn) | ARN of the cross-account IAM role for remote stack access |
 | <a name="output_current_account_id"></a> [current\_account\_id](#output\_current\_account\_id) | AWS account ID where the module is deployed |
 | <a name="output_current_region"></a> [current\_region](#output\_current\_region) | AWS region where the module is deployed |
 | <a name="output_dynamodb_table_name"></a> [dynamodb\_table\_name](#output\_dynamodb\_table\_name) | Name of the DynamoDB configuration table |
@@ -226,7 +225,6 @@ For issues and questions:
 | <a name="output_hub_stack_id"></a> [hub\_stack\_id](#output\_hub\_stack\_id) | CloudFormation stack ID for the hub stack |
 | <a name="output_hub_stack_name"></a> [hub\_stack\_name](#output\_hub\_stack\_name) | CloudFormation stack name for the hub stack |
 | <a name="output_hub_stack_region"></a> [hub\_stack\_region](#output\_hub\_stack\_region) | AWS region where the hub stack is deployed |
-| <a name="output_lambda_function_arn"></a> [lambda\_function\_arn](#output\_lambda\_function\_arn) | ARN of the Instance Scheduler Lambda function |
 | <a name="output_namespace"></a> [namespace](#output\_namespace) | Namespace used for this deployment |
 | <a name="output_remote_parameters"></a> [remote\_parameters](#output\_remote\_parameters) | Parameters passed to the remote CloudFormation stack |
 | <a name="output_remote_stack_id"></a> [remote\_stack\_id](#output\_remote\_stack\_id) | CloudFormation stack ID for the remote stack |
@@ -234,6 +232,7 @@ For issues and questions:
 | <a name="output_remote_stack_region"></a> [remote\_stack\_region](#output\_remote\_stack\_region) | AWS region where the remote stack is deployed |
 | <a name="output_schedule_tag_key"></a> [schedule\_tag\_key](#output\_schedule\_tag\_key) | Tag key used for instance scheduling |
 | <a name="output_scheduler_role_arn"></a> [scheduler\_role\_arn](#output\_scheduler\_role\_arn) | ARN of the Instance Scheduler IAM role |
+| <a name="output_service_token"></a> [service\_token](#output\_service\_token) | Service token for the Instance Scheduler |
 | <a name="output_sns_topic_arn"></a> [sns\_topic\_arn](#output\_sns\_topic\_arn) | ARN of the Instance Scheduler SNS topic |
 | <a name="output_solution_version"></a> [solution\_version](#output\_solution\_version) | Version of the Instance Scheduler solution deployed |
 | <a name="output_template_urls"></a> [template\_urls](#output\_template\_urls) | CloudFormation template URLs used for deployment |

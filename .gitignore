@@ -45,3 +45,9 @@ todo.md
 # Ignore lambda zip files and build directories
 *.zip
 builds/
+
+# CloudFormation templates for reference (downloaded from AWS)
+docs/cloudformation-templates/
+*.template
+*-template.yaml
+*-template.yml

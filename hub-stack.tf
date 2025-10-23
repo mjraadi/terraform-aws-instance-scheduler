@@ -49,15 +49,19 @@ locals {
       null
     )
     dynamodb_table_name = try(
-      aws_cloudformation_stack.hub_stack[0].outputs["ConfigTable"],
-      null
-    )
-    lambda_function_arn = try(
-      aws_cloudformation_stack.hub_stack[0].outputs["SchedulerLambdaFunction"],
+      aws_cloudformation_stack.hub_stack[0].outputs["ConfigurationTable"],
       null
     )
     sns_topic_arn = try(
-      aws_cloudformation_stack.hub_stack[0].outputs["SchedulerTopic"],
+      aws_cloudformation_stack.hub_stack[0].outputs["IssueSnsTopicArn"],
+      null
+    )
+    service_token = try(
+      aws_cloudformation_stack.hub_stack[0].outputs["ServiceInstanceScheduleServiceToken"],
+      null
+    )
+    account_id = try(
+      aws_cloudformation_stack.hub_stack[0].outputs["AccountId"],
       null
     )
   } : {}
