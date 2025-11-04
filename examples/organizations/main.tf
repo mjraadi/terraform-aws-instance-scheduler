@@ -44,7 +44,7 @@ module "instance_scheduler_org" {
   regions = ["us-east-1", "us-west-2", "eu-west-1"]
 
   # Production settings
-  memory_size                   = 256
+  memory_size                   = 512
   log_retention_days            = 90
   enable_debug_logging          = false
   enable_operational_monitoring = true
