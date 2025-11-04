@@ -21,7 +21,7 @@ output "hub_stack_name" {
 
 output "hub_stack_region" {
   description = "AWS region where the hub stack is deployed"
-  value       = var.deploy_hub_stack ? aws_cloudformation_stack.hub_stack[0].region : null
+  value       = var.deploy_hub_stack ? local.current_region : null
 }
 
 output "scheduler_role_arn" {
@@ -60,7 +60,7 @@ output "remote_stack_name" {
 
 output "remote_stack_region" {
   description = "AWS region where the remote stack is deployed"
-  value       = var.deploy_remote_stack ? aws_cloudformation_stack.remote_stack[0].region : null
+  value       = var.deploy_remote_stack ? local.current_region : null
 }
 
 # =============================================================================
